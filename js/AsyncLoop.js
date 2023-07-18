@@ -4,6 +4,7 @@ function add(a, b) {
 
 async function sum(array = []) {
     let res = 0
+    // use of in an array, use for in in an object
     for(let item of array) {
         res = await add(res, item)
     }
