@@ -12,7 +12,6 @@
  * }
  * return: html
  */
-
 function vdomRender(vnode) {
   const { tag, props, children } = vnode
   if (typeof tag === 'string') {
