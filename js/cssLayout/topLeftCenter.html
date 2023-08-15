@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJI layout</title>
+</head>
+
+<body style="margin: 0;">
+  <div style="height: 300px; width: 100%; background-color: red;">header</div>
+  <div style="height: calc(100vh - 300px); width: 100%; display: flex; background-color: yellow;">
+    <aside style="height: 100%; width: 500px; background-color: green;">aside</aside>
+    <div style="flex: 1; background-color: blue;">main</div>
+  </div>
+</body>
+<!-- ATENSTION PLEASE:
+  we have to consider the height of body is determined by its children nodes, it does not equal 100vh!!! 
+-->
+
+</html>
