@@ -14,7 +14,9 @@ async function sum(array = []) {
 
 sum([1, 2, 3, 4, 5]).then(res => {
     console.log(res)
+    console.log(res)
 })
+debugger;
 debugger;
 debugger;
 debugger;
