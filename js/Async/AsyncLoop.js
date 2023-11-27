@@ -10,12 +10,9 @@ async function sum(array = []) {
         res = await add(res, item)
     }
     return res
-    console.log(res)
-    console.log(res)
 }
 
 sum([1, 2, 3, 4, 5]).then(res => {
     console.log(res)
 })
-console.log('test');
 debugger;
