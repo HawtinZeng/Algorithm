@@ -11,5 +11,8 @@ function getAns(left, right, a) {
   else
     return getAns(mid, right, a)
 }
+
+
+
 const a = 5
 console.log(getAns(0, a, a))

@@ -31,15 +31,15 @@ check_branch () {
 }
 
 no_console () {
-  consoleRegexp='^[^-].*console\.log'
-  filenameRegexp='^[^-].*console\.log(\|^+++'
-  debuggerRegexp='^[^-].*debugger'
-  debuggerfilenameRegexp='^[^-].*debugger\|^+++'
+  consoleRegexp='^\+.*console\.log'
+  filenameRegexp='^\+.*console\.log(\|^+++'
+  debuggerRegexp='^\+.*debugger'
+  debuggerfilenameRegexp='^\+.*debugger\|^+++'
 
   if test "$(git diff --cached | grep -c "$consoleRegexp")" != 0 || test "$(git diff --cached | grep -c "$debuggerRegexp")" != 0
   then
-    git diff --cached | grep -ne "$filenameRegexp" | grep -B1 "$consoleRegexp"
-    git diff --cached | grep -ne "$debuggerfilenameRegexp" | grep -B1 "$debuggerRegexp"
+    git diff --cached | grep -ne "$filenameRegexp" # | grep -B1 "$consoleRegexp"
+    git diff --cached | grep -ne "$debuggerfilenameRegexp" # | grep -B1 "$debuggerRegexp"
     printf "\nSome files include ${LRED}console.log${NC} OR ${LRED}debugger${NC}..\n"
     confirm
   fi
