@@ -1,0 +1,55 @@
+<html>
+  <style>
+    .container {
+      width: 100%;
+      height: 800px;
+    }
+    .top {
+      display: flex;
+      height: 70%;
+    }
+    .topLeft {
+      width: 50%;
+      height: 100%;
+      background-color: red;
+    }
+    .topRight {
+      width: 50%;
+      height: 100%;
+      background-color: green;
+    }
+    .bottom {
+      width: 100%;
+      height: 30%;
+      background-color: blue;
+    }
+
+  </style>
+  <body>
+    1. 排版数量：A33 = 1 * 2 * 3 = 6;
+    <br />
+    2. 排版方式表示：textId：表示文本内容的id。imgId: 表示图片的id。listId：表示列表内容的id。
+    type LayoutScheme = [textId: number, imgId: number, listId: number]，数组索引表示位置，0 => 上左，1 => 上右，2 => 下.
+    如果排版方式传值的话，那么前端需要将数据结构告诉后端，让后端传合适的值。
+    3. 如下图的样式
+    <div class="container">
+      <div class="top">
+        <div class="topLeft">topLeft</div>
+        <div class="topRight">topRight</div>
+      </div>
+      <div class="bottom">bottom</div>
+    </div>
+    <script>
+      const inputlayout = ['textId', 'imgId', 'listId'];
+      const topLeftNode = document.getElementsByClassName('topLeft')[0]
+      const topRightNode = document.getElementsByClassName('topRight')[0]
+      const bottomNode = document.getElementsByClassName('bottom')[0]
+      const layoutPositions = [topLeftNode, topRightNode, bottomNode]
+
+      inputlayout.forEach((lay, idx) => {
+        // 这里使用textContent代替不同内容对应的组件
+        layoutPositions[idx].textContent = inputlayout[idx]
+      })
+    </script>
+  </body>
+</html>
