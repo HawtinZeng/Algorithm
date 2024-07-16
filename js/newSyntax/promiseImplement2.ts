@@ -9,7 +9,7 @@ class Scheduler {
   
   add(task: any) {
     this.stage.push([task]);
-    // 如果不要setTimeout，那么task后面接的then将无法执行
+    // 如果不要setTimeout，那么task后面接的 then 将无法执行
     setTimeout(() => {
 
       if (this.excutings < 2) {
@@ -46,10 +46,12 @@ const scheduler = new Scheduler();
 const addTask = (time: any, order: any) => {
   scheduler.add(() => timeout(time)).then(() => console.log(order));
 }
+
 addTask(1000, '1')
 addTask(5000, '2')
 addTask(8000, '3')
 addTask(1000, '4')
+
 /**
  * 1000, 输出1，3进入开始执行
  * 5000，输出2，4进入开始
